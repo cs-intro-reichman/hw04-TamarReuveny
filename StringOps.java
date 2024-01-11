@@ -22,21 +22,140 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
+
+        System.out.println(capVowelsLowRest("One two tHRee world"));
+         System.out.println(camelCase(" Intro to coMPUter SCIEnce "));
+         System.out.println(allIndexOf("Hello world", 'l'));
+
         
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+
+        String newString = "";
+
+        for (int i = 0 ; i < string.length() ; i++) {
+
+            char char1 = string.charAt(i);
+
+            int strNew = string.charAt(i);
+
+            if (strNew == 97 || strNew == 101 || strNew == 105 || strNew == 111 || strNew == 117) {
+
+               newString = newString + (char)(strNew - 32);
+                
+            } else if (char1 == ' ') {
+
+                    newString = newString + " ";
+
+            } else if (strNew >= 65 && strNew <= 90) {
+
+                newString = newString + (char)(strNew + 32);
+
+            } else {
+
+                newString = newString + char1;
+            }    
+            
+        }
+       
+        return newString;
     }
+
+
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+
+        String newString = "";
+
+        for (int i = 0 ; i < string.length() ; i++) {
+
+            char char1 = string.charAt(i);
+
+            int strNew = string.charAt(i);
+
+            int tempNew = 0;
+
+            if (strNew >= 65 && strNew <= 90) { 
+
+               newString = newString + (char)(strNew + 32);
+
+            } else if ((char1 == ' ')) {
+
+                if (i == (string.length()-1)) {
+
+                   break;
+
+                } else if (i == 0) {
+
+                    tempNew = string.charAt(i+1);
+
+                    if (tempNew >= 65 && tempNew <= 90) {
+
+                        tempNew = tempNew + 32;
+                    }
+
+                    newString = newString + (char)(tempNew);
+
+                } else { 
+
+                      tempNew = string.charAt(i+1);
+
+                       if (tempNew >= 97 && tempNew <= 122) {
+
+                           newString = newString + (char)(tempNew-32); 
+
+                    } else {
+
+                            newString = newString + (char) (tempNew);
+                    }
+                }
+                  i++;
+
+                } else {
+
+                newString = newString + char1;
+            }
+    
+        }
+            
+        return newString;
     }
 
+
+
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+
+        int count = 0;
+
+        // Count occurrences of chr in the string.
+        
+        for (int i = 0 ; i < string.length() ; i++) {
+
+            char charFromString = string.charAt(i);
+
+            if (charFromString == chr) {
+
+                count++;
+            }
+        }
+
+        int currentIndex = 0;
+
+        int[] arr = new int [count];
+        
+        for (int i = 0 ; i < string.length() ; i++) {
+
+            char charFromString = string.charAt(i);
+
+            if (charFromString == chr) {
+
+                arr[currentIndex] = i;
+
+                currentIndex++;
+            }
+        }
+        
+        return arr;
     }
 }
