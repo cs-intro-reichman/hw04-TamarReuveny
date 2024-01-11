@@ -23,11 +23,6 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
 
-        System.out.println(capVowelsLowRest("One two tHRee world"));
-         System.out.println(camelCase(" tWo wordS"));
-         System.out.println(allIndexOf("Hello world", 'l'));
-
-        
     }
 
     public static String capVowelsLowRest (String string) {
