@@ -80,8 +80,6 @@ public class StringOps {
 
                 while (string.charAt(i) == ' ') {
 
-                    newString = newString + "";
-
                     i++;
                 }
 
@@ -97,11 +95,9 @@ public class StringOps {
 
                 }
 
-                } else if (i != 0) {
+                } else {
 
                     while (string.charAt(i) == ' ') {
-
-                    newString = newString + "";
 
                     i++;
 
