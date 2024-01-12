@@ -97,7 +97,7 @@ public class StringOps {
 
                 } else {
 
-                    while (string.charAt(i) == ' ') {
+                    if (string.charAt(i) == ' ') {
 
                     i++;
 
@@ -111,7 +111,7 @@ public class StringOps {
 
                     } else {
 
-                     newString = newString + (char) (strNew-32);
+                     newString = newString + (char)(strNew-32);
 
                     }
                 }
