@@ -97,7 +97,7 @@ public class StringOps {
 
                 }
 
-                } else {
+                } else if (i != 0) {
 
                     while (string.charAt(i) == ' ') {
 
