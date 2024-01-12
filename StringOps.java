@@ -23,7 +23,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
 
-        System.out.println(camelCase(" tWo wordS"));
+        System.out.println(camelCase("   tWo    wordS"));
        
 
     }
@@ -115,9 +115,9 @@ public class StringOps {
 
                     } else {
 
-                     newString = newString + (char) (strNew -32);
-                    }
+                     newString = newString + (char) (strNew-32);
 
+                    }
                 }
 
             } else {
@@ -136,7 +136,6 @@ public class StringOps {
             }
 
             i++;
-    
         }
             
         return newString;
