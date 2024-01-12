@@ -23,6 +23,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
 
+
     }
 
     public static String capVowelsLowRest (String string) {
@@ -63,19 +64,11 @@ public class StringOps {
 
         String newString = "";
 
-        for (int i = 0 ; i < string.length() ; i++) {
+        int i = 0;
 
-            char char1 = string.charAt(i);
+        while (i < string.length()) {
 
-            int strNew = string.charAt(i);
-
-            int tempNew = 0;
-
-            if (strNew >= 65 && strNew <= 90) { 
-
-               newString = newString + (char)(strNew + 32);
-
-            } else if ((char1 == ' ')) {
+            if (string.charAt(i) == ' ') {
 
                 if (i == (string.length()-1)) {
 
@@ -83,34 +76,64 @@ public class StringOps {
 
                 } else if (i == 0) {
 
-                    tempNew = string.charAt(i+1);
+                while (string.charAt(i) == ' ') {
 
-                    if (tempNew >= 65 && tempNew <= 90) {
+                    newString = newString + "";
 
-                        tempNew = tempNew + 32;
-                    }
-
-                    newString = newString + (char)(tempNew);
-
-                } else { 
-
-                      tempNew = string.charAt(i+1);
-
-                       if (tempNew >= 97 && tempNew <= 122) {
-
-                           newString = newString + (char)(tempNew-32); 
-
-                    } else {
-
-                            newString = newString + (char) (tempNew);
-                    }
+                    i++;
                 }
-                  i++;
+
+                int strNew = string.charAt(i);
+
+                if (strNew >= 65 && strNew <= 90) { 
+
+                newString = newString + (char)(strNew + 32);
 
                 } else {
 
-                newString = newString + char1;
+                newString = newString + (char)(strNew);
+
+                }
+
+                } else {
+
+                    while (string.charAt(i) == ' ') {
+
+                    newString = newString + "";
+
+                    i++;
+
+                    }
+
+                    int strNew = string.charAt(i);
+
+                    if (strNew >= 65 && strNew <= 90) {
+
+                    newString = newString + (char)(strNew);
+
+                    } else {
+
+                     newString = newString + (char) (strNew -32);
+                    }
+
+                }
+
+            } else {
+
+            int strNew = string.charAt(i);
+            
+            if (strNew >= 65 && strNew <= 90) {
+
+                newString = newString + (char)(strNew +32);
+
+                } else { 
+
+                    newString = newString +(char)(strNew) ;     
+                }
+               
             }
+
+            i++;
     
         }
             
