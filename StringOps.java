@@ -23,7 +23,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
 
-        System.out.println(camelCase("   tWo    wordS"));
+        System.out.println(camelCase(" tWo    wordS"));
        
 
     }
@@ -97,7 +97,7 @@ public class StringOps {
 
                 } else {
 
-                    if (string.charAt(i) == ' ') {
+                    while (string.charAt(i) == ' ') {    
 
                     i++;
 
