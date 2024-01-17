@@ -23,9 +23,9 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
 
-        //System.out.print(capVowelsLowRest("One two tHRee world"));
+        System.out.println(capVowelsLowRest("One two tHRee world"));
 
-        System.out.print(camelCase(" tWo    wordS"));
+        System.out.println(camelCase(" tWo    wordS"));
 
     }
 
