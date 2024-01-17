@@ -34,30 +34,18 @@ public class StringOps {
         String newString = "";
 
         for (int i = 0 ; i < string.length() ; i++) {
-
             char char1 = string.charAt(i);
-
             int strNew = string.charAt(i);
-
             if (strNew == 97 || strNew == 101 || strNew == 105 || strNew == 111 || strNew == 117) {
-
                 newString = newString + (char)(strNew - 32); 
-
                } else if (char1 == ' ') {
-
-                newString = newString + " ";
-                
+                newString = newString + " "; 
                } else if ((strNew >= 65 && strNew <= 90) && strNew != 65 && strNew != 69 && strNew != 73 && strNew != 79 && strNew != 85) {
-
                 newString = newString + (char)(strNew +32);
-
                } else {
-
                 newString = newString + char1;
                }
-
-               }
-
+         }
                return newString;
         }
 
@@ -68,17 +56,29 @@ public class StringOps {
 
         String newString = "";
 
-        char first = string.charAt(0);
-        int num = (int) first;
+        // Changing the first letter to small letter
+        int x = 0;
+        char first = string.charAt(x);
+        if (first == ' ') {
+            while (first == ' ') {
+            x++;
+            first = string.charAt(x); 
+        }
+        }   
+        int num = (int) string.charAt(x);
      if (num >= 65 && num <= 90) {
         num = num + 32;
-        char e = (char) num;
-        newString = newString + e;
+        char char1 = (char) num;
+        newString = newString + char1;
     } else {
-        newString = newString + first;}
-    boolean cap = false;
+        newString = newString + first;
+    }
 
-    for (int i = 1; i < string.length(); i++) {
+        // Changing the first letter of each word after the first word to capital letter,
+        // erasing all spaces, and converting other letters to small letters
+
+        boolean cap = false;
+    for (int i = x+1; i < string.length(); i++) {
         char currentchar = string.charAt(i);
         int num1 = (int) currentchar;
         if (num1 == 32) {
